@@ -3,7 +3,9 @@
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\front\AuthController;
+use App\Http\Controllers\front\FrontController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -22,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+Route::get('/', [FrontController::class, 'index'])->name('front.home');
 // front user route
 Route::group(['prefix' => 'account'], function () {
     Route::group(['middleware' => 'guest'], function () {
